@@ -1,0 +1,18 @@
+
+<div class="container">
+  <h2>Tillgänglig Skidutrustning</h2>
+  <div class="row">
+    <div *ngFor="let skidpaket of skidoritemarray" class="col-md-4 mb-4">
+      <div class="card">
+        <img [src]="skidpaket.imageUrl" class="card-img-top" alt="Ski Equipment Image">
+        <div class="card-body">
+          <h5 class="card-title">{{ skidpaket.header }}</h5>
+          <p class="card-text">{{ skidpaket.description }}</p>
+          <div *ngIf="skidpaket.extendedDescriptionVisible" class="extended-description" [innerHTML]="skidpaket.extendedDescription"></div>
+          <a (click)="toggleExtendedDescription(skidpaket)">{{ skidpaket.extendedDescriptionVisible ? 'Visa mindre' : 'Visa mer' }}</a>
+          <button (click)="selectEquipment(skidpaket)" class="btn btn-primary">Välj</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

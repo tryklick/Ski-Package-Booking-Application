@@ -1,0 +1,78 @@
+.container {
+  background-color: #ffc0cb; /* Rosa bakgrundsfärg */
+  padding: 20px;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 1.2rem;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 1.2rem;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.invalid-feedback {
+  color: #ff0000; /* Röd färg för felmeddelanden */
+  font-size: 1.2rem;
+}
+
+.is-valid {
+  color: #008000; /* Grön färg för godkända fält */
+  font-size: 1.2rem;
+}
+
+.is-invalid {
+  border-color: #ff0000; /* Röd kant för ogiltiga fält */
+}
+
+.btn {
+  font-size: 1.2rem;
+}
+
+.btn-secondary {
+  background-color: #ff69b4; /* Rosa knappar */
+  border-color: #ff69b4;
+}
+
+.btn-secondary:hover {
+  background-color: #ff1493; /* Rosa hover-effekt */
+  border-color: #ff1493;
+}
+
+.btn-primary {
+  background-color: #ff69b4; /* Rosa knappar */
+  border-color: #ff69b4;
+}
+
+.btn-primary:hover {
+  background-color: #ff1493; /* Rosa hover-effekt */
+  border-color: #ff1493;
+}

@@ -1,0 +1,48 @@
+<div class="container">
+  <h1>Välkommen till Skidutrustningsuthyrningen</h1>
+
+    <app-skid-paket-lista *ngIf="!selectedSkiPackage?.id"
+      (dinpaket)="handleSelectedEquipment($event)"></app-skid-paket-lista>
+
+  <div *ngIf="selectedSkiPackage?.id && !showConfirmation">
+    <h2>Din Valda Skidutrustning</h2>
+    <div class="card">
+      <div class="card-body">
+        <!--<img [src]="selectedSkiPackage?.imageUrl" class="card-img-top" alt="Selected Ski Equipment Image">-->
+        <h5 class="card-title">{{ selectedSkiPackage?.header }}</h5>
+        <p class="card-text">{{ selectedSkiPackage?.description }}</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="bookingName">Namn</label>
+      <input
+        type="text"
+        class="form-control"
+        id="bookingName"
+        name="bookingName"
+        required
+        [(ngModel)]="bookingName"
+        #name="ngModel"
+        [ngClass]="{ 'is-invalid': name.invalid && name.touched, 'is-valid': name.valid && name.touched }"
+        placeholder="Namn obligatoriskt"
+      />
+      <div ngClass='{ name.invalid ? "invalid-feedback" : "is-valid" }'>
+        {{ name.invalid ? "" : "" }}
+      </div>
+
+    </div>
+    <button type="button" (click)="cancelBooking()" class="btn btn-secondary">Cancel</button>
+    <button type="button"(click)="submitBookingForm()"class="btn btn-primary">Boka</button>
+    </div>
+
+  <div *ngIf="showConfirmation">
+    <h2>Bekräftelse</h2>
+    <div>
+      <h3>Produkt:</h3>
+      <div>{{ selectedSkiPackage?.header }}</div>
+      <h3>Bekräftelsenummer:</h3>
+      <div>{{ bookingConfirmation?.confirmationNumber }}</div>
+    </div>
+  </div>
+</div>
